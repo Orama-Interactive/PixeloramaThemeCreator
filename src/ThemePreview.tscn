@@ -1,0 +1,190 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgy24hxeaxnny"]
+
+[ext_resource type="Script" path="res://src/ThemePreview.gd" id="1_rvxmp"]
+
+[node name="ThemePreview" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_rvxmp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+text = "Label"
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+text = "Button"
+
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+toggle_mode = true
+text = "Toggle Button"
+
+[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+disabled = true
+text = "Disabled Button"
+
+[node name="Button4" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+text = "Button"
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+text = "CheckButton"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+text = "CheckBox"
+
+[node name="MenuButton" type="MenuButton" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+text = "MenuButton"
+item_count = 9
+popup/item_0/text = "Item"
+popup/item_0/id = 0
+popup/item_1/text = "Disabled Item"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+popup/item_2/text = ""
+popup/item_2/id = 2
+popup/item_2/separator = true
+popup/item_3/text = "Check Item"
+popup/item_3/checkable = 1
+popup/item_3/id = 3
+popup/item_4/text = "Checked Item"
+popup/item_4/checkable = 1
+popup/item_4/checked = true
+popup/item_4/id = 4
+popup/item_5/text = ""
+popup/item_5/id = 7
+popup/item_5/separator = true
+popup/item_6/text = "Radio Item"
+popup/item_6/checkable = 2
+popup/item_6/id = 5
+popup/item_7/text = "Checked Radio Item"
+popup/item_7/checkable = 2
+popup/item_7/checked = true
+popup/item_7/id = 6
+popup/item_8/text = "Named Separator"
+popup/item_8/id = 8
+popup/item_8/separator = true
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+item_count = 5
+selected = 0
+popup/item_0/text = "OptionButton"
+popup/item_0/id = 0
+popup/item_1/text = ""
+popup/item_1/id = 1
+popup/item_1/separator = true
+popup/item_2/text = "Has"
+popup/item_2/id = 2
+popup/item_3/text = "Many"
+popup/item_3/id = 3
+popup/item_4/text = "Options"
+popup/item_4/id = 4
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+text = "ColorPickerButton"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "LineEdit"
+
+[node name="LineEdit2" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Disabled LineEdit"
+editable = false
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 93)
+layout_mode = 2
+text = "TextEdit"
+
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSlider" type="VSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+value = 20.0
+
+[node name="VScrollBar" type="VScrollBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HScrollBar" type="HScrollBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider2" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+editable = false
+
+[node name="TextureProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+value = 50.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="Tab 1" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2/TabContainer"]
+layout_mode = 2
+
+[node name="Tab 2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Tab 3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
