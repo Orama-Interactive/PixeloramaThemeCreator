@@ -1,9 +1,13 @@
 @tool
 extends Panel
 
+@onready var popup_window: Button = $MarginContainer/HBoxContainer/Buttons/PopupWindow
 @onready var tree: Tree = $MarginContainer/HBoxContainer/VBoxContainer2/Tree
+@onready var accept_dialog: AcceptDialog = $AcceptDialog
+
 
 func _ready() -> void:
+	popup_window.pressed.connect(func(): accept_dialog.popup_centered())
 	var root := tree.create_item()
 	root.set_text(0, "Tree")
 	var child1 := tree.create_item(root)

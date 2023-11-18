@@ -3,7 +3,8 @@ extends Control
 var theme_to_apply := theme.duplicate() as Theme
 var theme_properties := {
 	"Primary": [
-		ThemeProperty.new(&"panel", &"Panel"),
+		ThemeProperty.new(&"panel", &"Panel", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"panel", &"PopupPanel", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"disabled", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"focus", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"hover", &"Button", Theme.DATA_TYPE_STYLEBOX),
@@ -12,6 +13,7 @@ var theme_properties := {
 	],
 	"Secondary": [
 		ThemeProperty.new(&"panel", &"PanelContainer", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"panel", &"AcceptDialog", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"TabContainer", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"clear_color", &"Misc"),
 	],
@@ -25,6 +27,8 @@ var theme_properties := {
 		ThemeProperty.new(&"tab_selected", &"TabContainer", Theme.DATA_TYPE_STYLEBOX, true),
 		ThemeProperty.new(&"selected", &"Tree", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"selected_focus", &"Tree", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"font_focus_color", &"Button"),
+		ThemeProperty.new(&"font_hover_color", &"Button"),
 		ThemeProperty.new(&"font_hover_pressed_color", &"Button"),
 		ThemeProperty.new(&"font_pressed_color", &"Button"),
 		ThemeProperty.new(&"icon_color_pressed", &"Button"),
@@ -33,7 +37,26 @@ var theme_properties := {
 	],
 	"Text color": [
 		ThemeProperty.new(&"font_color", &"Button"),
+		ThemeProperty.new(&"font_color", &"MenuButton"),
+		ThemeProperty.new(&"font_color", &"OptionButton"),
+		ThemeProperty.new(&"font_color", &"ProgressBar"),
+		ThemeProperty.new(&"font_color", &"Label"),
+		ThemeProperty.new(&"font_color", &"LineEdit"),
+		ThemeProperty.new(&"font_color", &"TextEdit"),
+		ThemeProperty.new(&"font_color", &"Tree"),
+		ThemeProperty.new(&"font_selected_color", &"TabBar"),
+		ThemeProperty.new(&"font_unselected_color", &"TabBar"),
+		ThemeProperty.new(&"font_selected_color", &"TabContainer"),
+		ThemeProperty.new(&"font_unselected_color", &"TabContainer"),
+		ThemeProperty.new(&"title_color", &"Window"),
 	],
+	"Sliders": [
+		ThemeProperty.new(&"grabber", &"HScrollBar", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"grabber", &"VScrollBar", Theme.DATA_TYPE_STYLEBOX),
+	],
+	"Window border": [
+		ThemeProperty.new(&"embedded_border", &"Window", Theme.DATA_TYPE_STYLEBOX),
+	]
 }
 
 @onready var grid_container := %GridContainer as GridContainer
@@ -59,6 +82,8 @@ class ThemeProperty:
 			theme.set_color(name, theme_type, color)
 		elif data_type == Theme.DATA_TYPE_STYLEBOX:
 			var stylebox := theme.get_stylebox(name, theme_type)
+			if not is_instance_valid(stylebox):
+				stylebox = StyleBoxFlat.new()
 			if stylebox is StyleBoxFlat:
 				if border:
 					stylebox.border_color = color

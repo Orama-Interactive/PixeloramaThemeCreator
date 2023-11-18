@@ -53,6 +53,10 @@ text = "Disabled Button"
 layout_mode = 2
 text = "Button"
 
+[node name="PopupWindow" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+text = "Popup Window"
+
 [node name="CheckButton" type="CheckButton" parent="MarginContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "CheckButton"
@@ -188,3 +192,7 @@ layout_mode = 2
 [node name="Tree" type="Tree" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+size = Vector2i(107, 100)
+dialog_text = "Hello there!"
