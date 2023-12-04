@@ -140,8 +140,5 @@ func color_changed(color: Color, properties: Array) -> void:
 		prop.set_color(theme_to_apply, color)
 
 
-func _on_apply_button_pressed() -> void:
-	pass
-	#for color_group: String in theme_properties.keys():
-		#for prop: ThemeProperty in theme_properties[color_group]:
-			#prop.set_color(theme_to_apply)
+func _on_save_button_pressed() -> void:
+	ResourceSaver.save(theme_to_apply, "user://theme.tres")
