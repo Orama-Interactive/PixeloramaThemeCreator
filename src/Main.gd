@@ -50,6 +50,17 @@ var theme_properties := {
 		ThemeProperty.new(&"font_unselected_color", &"TabContainer"),
 		ThemeProperty.new(&"title_color", &"Window"),
 	],
+	"Disabled text color": [
+		ThemeProperty.new(&"font_disabled_color", &"Button"),
+		ThemeProperty.new(&"icon_disabled_color", &"Button"),
+		ThemeProperty.new(&"font_disabled_color", &"MenuButton"),
+		ThemeProperty.new(&"font_disabled_color", &"OptionButton"),
+		ThemeProperty.new(&"font_disabled_color", &"PopupMenu"),
+		ThemeProperty.new(&"font_uneditable_color", &"LineEdit"),
+		ThemeProperty.new(&"font_uneditable_color", &"TextEdit"),
+		ThemeProperty.new(&"font_disabled_color", &"TabBar"),
+		ThemeProperty.new(&"font_disabled_color", &"TabContainer"),
+	],
 	"Sliders": [
 		ThemeProperty.new(&"grabber", &"HScrollBar", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"grabber", &"VScrollBar", Theme.DATA_TYPE_STYLEBOX),
@@ -121,6 +132,7 @@ func _ready() -> void:
 		color_picker.color_changed.connect(color_changed.bind(properties))
 		grid_container.add_child(label)
 		grid_container.add_child(color_picker)
+		color_changed(color_picker.color, properties)
 
 
 func color_changed(color: Color, properties: Array) -> void:
