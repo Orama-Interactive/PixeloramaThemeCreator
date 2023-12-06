@@ -4,17 +4,26 @@ var theme_to_apply := theme.duplicate() as Theme
 var theme_properties := {
 	"Background": [
 		ThemeProperty.new(&"panel", &"Panel", Theme.DATA_TYPE_STYLEBOX),
-		ThemeProperty.new(&"panel", &"PopupPanel", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"disabled", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"focus", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"hover", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"normal", &"Button", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"pressed", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"bg", &"Tree", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"focus", &"LineEdit", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"normal", &"LineEdit", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"read_only", &"LineEdit", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"focus", &"TextEdit", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"normal", &"TextEdit", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"read_only", &"TextEdit", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"panel", &"PopupPanel", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"panel", &"PopupMenu", Theme.DATA_TYPE_STYLEBOX),
 	],
 	"Primary": [
 		ThemeProperty.new(&"panel", &"PanelContainer", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"AcceptDialog", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"TabContainer", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"panel", &"Tree", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"clear_color", &"Misc"),
 	],
 	"Secondary": [
@@ -27,6 +36,7 @@ var theme_properties := {
 		ThemeProperty.new(&"focus", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"hover", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"normal", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"panel", &"TooltipPanel", Theme.DATA_TYPE_STYLEBOX, false, true),
 	],
 	"Accent": [
 		ThemeProperty.new(&"pressed", &"Button", Theme.DATA_TYPE_STYLEBOX, true),
@@ -57,6 +67,7 @@ var theme_properties := {
 		ThemeProperty.new(&"font_selected_color", &"TabContainer"),
 		ThemeProperty.new(&"font_unselected_color", &"TabContainer"),
 		ThemeProperty.new(&"title_color", &"Window"),
+		ThemeProperty.new(&"font_color", &"TooltipLabel", Theme.DATA_TYPE_COLOR, false, true),
 	],
 	"Disabled text color": [
 		ThemeProperty.new(&"font_disabled_color", &"Button"),
@@ -83,16 +94,24 @@ class ThemeProperty:
 	var name := &""
 	var theme_type := &""
 	var border := false
+	var inverted := false
 
 	func _init(
-		_name: StringName, _theme_type: StringName, _data_type := Theme.DATA_TYPE_COLOR, _border := false
+			_name: StringName,
+			_theme_type: StringName,
+			_data_type := Theme.DATA_TYPE_COLOR,
+			_border := false,
+			_inverted := false
 		) -> void:
 		name = _name
 		theme_type = _theme_type
 		data_type = _data_type
 		border = _border
+		inverted = _inverted
 
 	func set_color(theme: Theme, color: Color) -> void:
+		if inverted:
+			color = color.inverted()
 		if data_type == Theme.DATA_TYPE_COLOR:
 			theme.set_color(name, theme_type, color)
 		elif data_type == Theme.DATA_TYPE_STYLEBOX:

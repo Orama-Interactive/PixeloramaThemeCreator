@@ -37,6 +37,7 @@ text = "Label"
 
 [node name="Button" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
 layout_mode = 2
+tooltip_text = "This is a button"
 text = "Button"
 
 [node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
