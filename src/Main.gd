@@ -2,7 +2,7 @@ extends Control
 
 var theme_to_apply := theme.duplicate() as Theme
 var theme_properties := {
-	"Primary": [
+	"Background": [
 		ThemeProperty.new(&"panel", &"Panel", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"PopupPanel", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"disabled", &"Button", Theme.DATA_TYPE_STYLEBOX),
@@ -11,13 +11,13 @@ var theme_properties := {
 		ThemeProperty.new(&"normal", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"bg", &"Tree", Theme.DATA_TYPE_STYLEBOX),
 	],
-	"Secondary #1": [
+	"Primary": [
 		ThemeProperty.new(&"panel", &"PanelContainer", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"AcceptDialog", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"TabContainer", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"clear_color", &"Misc"),
 	],
-	"Secondary #2": [
+	"Secondary": [
 		ThemeProperty.new(&"grabber", &"HScrollBar", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"grabber", &"VScrollBar", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"progress_color", &"ValueSlider"),

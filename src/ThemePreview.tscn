@@ -193,6 +193,15 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Button in PanelContainer"
+
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 size = Vector2i(107, 100)
 dialog_text = "Hello there!"
