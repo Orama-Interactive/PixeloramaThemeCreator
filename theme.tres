@@ -1,4 +1,10 @@
-[gd_resource type="Theme" load_steps=71 format=3]
+[gd_resource type="Theme" load_steps=76 format=3 uid="uid://rglnetfnws4c"]
+
+[ext_resource type="Texture2D" uid="uid://bs1yr87ofrbcp" path="res://assets/graphics/misc/value_arrow.svg" id="1_oa42b"]
+[ext_resource type="FontFile" uid="uid://eriqykq7mg55" path="res://assets/fonts/Roboto-Regular.ttf" id="1_tscwl"]
+[ext_resource type="Texture2D" uid="uid://cpsao2x63p0iy" path="res://assets/graphics/misc/value_arrow_hover.svg" id="2_lp7br"]
+[ext_resource type="Texture2D" uid="uid://d1nfs05ukxpew" path="res://assets/graphics/misc/value_arrow_press.svg" id="3_h18ag"]
+[ext_resource type="Texture2D" uid="uid://dif1xoxo2gad1" path="res://assets/graphics/misc/value_slider.png" id="4_1646r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_755mo"]
 content_margin_left = 8.0
@@ -722,6 +728,7 @@ expand_margin_bottom = 6.0
 
 [resource]
 resource_name = "Dark"
+default_font = ExtResource("1_tscwl")
 default_font_size = 16
 AcceptDialog/styles/panel = SubResource("StyleBoxFlat_755mo")
 BoxContainer/constants/separation = 4
@@ -750,7 +757,7 @@ CheckButton/styles/hover = SubResource("23")
 CheckButton/styles/normal = SubResource("23")
 CheckButton/styles/pressed = SubResource("23")
 CollapsibleContainer/base_type = &"VBoxContainer"
-CollapsibleContainer/icons/arrow_normal = null
+CollapsibleContainer/icons/arrow_normal = ExtResource("1_oa42b")
 ColorPicker/constants/h_width = 30
 ColorPicker/constants/label_width = 10
 ColorPicker/constants/margin = 8
@@ -986,12 +993,12 @@ VSplitContainer/constants/separation = 8
 ValueSlider/base_type = &"TextureProgressBar"
 ValueSlider/colors/progress_color = Color(0.333333, 0.333333, 0.333333, 1)
 ValueSlider/colors/under_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
-ValueSlider/icons/arrow_hover = null
-ValueSlider/icons/arrow_normal = null
-ValueSlider/icons/arrow_pressed = null
+ValueSlider/icons/arrow_hover = ExtResource("2_lp7br")
+ValueSlider/icons/arrow_normal = ExtResource("1_oa42b")
+ValueSlider/icons/arrow_pressed = ExtResource("3_h18ag")
 ValueSlider/icons/texture_over = null
-ValueSlider/icons/texture_progress = null
-ValueSlider/icons/texture_under = null
+ValueSlider/icons/texture_progress = ExtResource("4_1646r")
+ValueSlider/icons/texture_under = ExtResource("4_1646r")
 Window/colors/title_color = Color(0.776471, 0.776471, 0.776471, 1)
 Window/constants/title_height = 24
 Window/styles/embedded_border = SubResource("StyleBoxFlat_pgljm")
