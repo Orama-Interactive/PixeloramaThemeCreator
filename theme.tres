@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=74 format=3 uid="uid://rglnetfnws4c"]
+[gd_resource type="Theme" load_steps=75 format=3 uid="uid://rglnetfnws4c"]
 
 [ext_resource type="Texture2D" uid="uid://bs1yr87ofrbcp" path="res://assets/graphics/misc/value_arrow.svg" id="1_2xbpi"]
 [ext_resource type="Texture2D" uid="uid://cpsao2x63p0iy" path="res://assets/graphics/misc/value_arrow_hover.svg" id="2_eypjx"]
@@ -254,6 +254,10 @@ content_margin_right = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0.231373, 0.231373, 0.231373, 1)
 border_color = Color(0.113281, 0.113281, 0.113281, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u871w"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="3"]
 content_margin_left = 6.0
@@ -701,6 +705,7 @@ ItemList/styles/cursor_unfocused = SubResource("94")
 ItemList/styles/selected = SubResource("95")
 ItemList/styles/selected_focus = SubResource("96")
 Label/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
+Label/styles/normal = SubResource("StyleBoxEmpty_u871w")
 LineEdit/colors/clear_button_color = Color(0.77832, 0.77832, 0.77832, 1)
 LineEdit/colors/clear_button_color_pressed = Color(0.184314, 0.396078, 0.533333, 1)
 LineEdit/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
