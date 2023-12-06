@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=64 format=3 uid="uid://rglnetfnws4c"]
+[gd_resource type="Theme" load_steps=74 format=3 uid="uid://rglnetfnws4c"]
 
 [ext_resource type="Texture2D" uid="uid://bs1yr87ofrbcp" path="res://assets/graphics/misc/value_arrow.svg" id="1_2xbpi"]
 [ext_resource type="Texture2D" uid="uid://cpsao2x63p0iy" path="res://assets/graphics/misc/value_arrow_hover.svg" id="2_eypjx"]
@@ -38,17 +38,65 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="15"]
-content_margin_left = 4.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbyuh"]
 content_margin_top = 4.0
-content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.0906248, 0.0906248, 0.0906248, 1)
 draw_center = false
-border_color = Color(0.0792967, 0.0792967, 0.0792967, 1)
 
-[sub_resource type="StyleBoxFlat" id="24"]
-bg_color = Color(0.2, 0.2, 0.2, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dymj"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jbvl"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoilh"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dr6kc"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hsnf"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d140b"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7wcw"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j786n"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_viauy"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygru1"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h750t"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="33"]
 bg_color = Color(0.768627, 0.768627, 0.768627, 1)
@@ -207,12 +255,6 @@ content_margin_bottom = 4.0
 bg_color = Color(0.231373, 0.231373, 0.231373, 1)
 border_color = Color(0.113281, 0.113281, 0.113281, 1)
 
-[sub_resource type="StyleBoxEmpty" id="97"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-
 [sub_resource type="StyleBoxFlat" id="3"]
 content_margin_left = 6.0
 content_margin_top = 4.0
@@ -260,6 +302,12 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxEmpty" id="97"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="4"]
 content_margin_left = 6.0
@@ -602,15 +650,18 @@ Button/styles/focus = SubResource("23")
 Button/styles/hover = SubResource("23")
 Button/styles/normal = SubResource("23")
 Button/styles/pressed = SubResource("StyleBoxFlat_t0f5f")
-CheckBox/styles/disabled = SubResource("15")
-CheckBox/styles/hover = SubResource("15")
-CheckBox/styles/normal = SubResource("15")
-CheckBox/styles/pressed = SubResource("15")
-CheckButton/styles/disabled = SubResource("23")
-CheckButton/styles/focus = SubResource("24")
-CheckButton/styles/hover = SubResource("23")
-CheckButton/styles/normal = SubResource("23")
-CheckButton/styles/pressed = SubResource("23")
+CheckBox/styles/disabled = SubResource("StyleBoxFlat_lbyuh")
+CheckBox/styles/focus = SubResource("StyleBoxFlat_4dymj")
+CheckBox/styles/hover = SubResource("StyleBoxFlat_4jbvl")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxFlat_eoilh")
+CheckBox/styles/normal = SubResource("StyleBoxFlat_dr6kc")
+CheckBox/styles/pressed = SubResource("StyleBoxFlat_8hsnf")
+CheckButton/styles/disabled = SubResource("StyleBoxFlat_d140b")
+CheckButton/styles/focus = SubResource("StyleBoxFlat_k7wcw")
+CheckButton/styles/hover = SubResource("StyleBoxFlat_j786n")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxFlat_viauy")
+CheckButton/styles/normal = SubResource("StyleBoxFlat_ygru1")
+CheckButton/styles/pressed = SubResource("StyleBoxFlat_h750t")
 CollapsibleContainer/base_type = &"VBoxContainer"
 CollapsibleContainer/icons/arrow_normal = ExtResource("1_2xbpi")
 ColorPicker/constants/h_width = 30
@@ -618,7 +669,6 @@ ColorPicker/constants/label_width = 10
 ColorPicker/constants/margin = 8
 ColorPicker/constants/sv_height = 256
 ColorPicker/constants/sv_width = 256
-ColorPickerButton/colors/font_color = Color(1, 1, 1, 1)
 ColorPickerButton/styles/disabled = null
 ColorPickerButton/styles/focus = null
 ColorPickerButton/styles/hover = SubResource("33")
@@ -630,19 +680,15 @@ GraphEdit/colors/grid_minor = Color(1, 1, 1, 0.07)
 GraphEdit/colors/selection_fill = Color(0.184314, 0.396078, 0.533333, 0.3)
 GraphEdit/colors/selection_stroke = Color(0.184314, 0.396078, 0.533333, 0.8)
 GraphNode/colors/resizer_color = Color(1, 1, 1, 0.7)
-GraphNode/constants/separation = 1
-HBoxContainer/constants/separation = 4
 HScrollBar/styles/grabber = SubResource("StyleBoxFlat_ri1fl")
 HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_q3k4c")
 HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_l27bo")
 HScrollBar/styles/scroll = SubResource("StyleBoxFlat_1emgw")
 HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_ktbsq")
-HSeparator/constants/separation = 4
 HSeparator/styles/separator = SubResource("81")
 HSlider/styles/grabber_area = SubResource("86")
 HSlider/styles/grabber_area_highlight = SubResource("87")
 HSlider/styles/slider = SubResource("88")
-HSplitContainer/constants/autohide = 1
 HSplitContainer/constants/separation = 8
 HeaderSmall/font_sizes/font_size = 18
 Icons/colors/modulate_color = Color(1, 1, 1, 1)
@@ -655,10 +701,6 @@ ItemList/styles/cursor_unfocused = SubResource("94")
 ItemList/styles/selected = SubResource("95")
 ItemList/styles/selected_focus = SubResource("96")
 Label/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
-Label/constants/line_spacing = 3
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/styles/normal = SubResource("97")
 LineEdit/colors/clear_button_color = Color(0.77832, 0.77832, 0.77832, 1)
 LineEdit/colors/clear_button_color_pressed = Color(0.184314, 0.396078, 0.533333, 1)
 LineEdit/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -667,12 +709,7 @@ LineEdit/colors/selection_color = Color(0.184314, 0.396078, 0.533333, 0.4)
 LineEdit/styles/focus = SubResource("3")
 LineEdit/styles/normal = SubResource("5")
 LineEdit/styles/read_only = SubResource("2")
-LinkButton/colors/font_color = Color(0.77832, 0.77832, 0.77832, 1)
 LinkButton/styles/focus = SubResource("97")
-MarginContainer/constants/margin_bottom = 0
-MarginContainer/constants/margin_left = 0
-MarginContainer/constants/margin_right = 0
-MarginContainer/constants/margin_top = 0
 MenuButton/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
 MenuButton/colors/font_disabled_color = Color(0.776471, 0.776471, 0.776471, 0.501961)
 MenuButton/styles/disabled = SubResource("23")
@@ -683,8 +720,6 @@ MenuButton/styles/pressed = SubResource("23")
 Misc/colors/clear_color = Color(0.141176, 0.141176, 0.141176, 1)
 OptionButton/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
 OptionButton/colors/font_disabled_color = Color(0.776471, 0.776471, 0.776471, 0.501961)
-OptionButton/constants/arrow_margin = 4
-OptionButton/constants/modulate_arrow = 1
 OptionButton/styles/disabled = SubResource("2")
 OptionButton/styles/focus = SubResource("3")
 OptionButton/styles/hover = SubResource("4")
@@ -702,8 +737,6 @@ PopupMenu/styles/separator = SubResource("115")
 PopupPanel/styles/panel = SubResource("StyleBoxFlat_fc11h")
 ProgressBar/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
 RichTextLabel/colors/default_color = Color(0.77832, 0.77832, 0.77832, 1)
-RichTextLabel/constants/shadow_offset_x = 1
-RichTextLabel/constants/shadow_offset_y = 1
 RichTextLabel/styles/focus = SubResource("123")
 RichTextLabel/styles/normal = SubResource("52")
 RulerButton/base_type = &"Button"
@@ -738,13 +771,10 @@ TextEdit/colors/current_line_color = Color(0.25, 0.25, 0.26, 0.8)
 TextEdit/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
 TextEdit/colors/selection_color = Color(0.184314, 0.396078, 0.533333, 0.4)
 TextEdit/colors/word_highlighted_color = Color(0.8, 0.9, 0.9, 0.15)
-TextEdit/constants/line_spacing = 4
 TextEdit/styles/focus = SubResource("4")
 TextEdit/styles/normal = SubResource("5")
 TextEdit/styles/read_only = SubResource("2")
 TooltipLabel/colors/font_color = Color(0.22168, 0.22168, 0.22168, 1)
-TooltipLabel/constants/shadow_offset_x = 1
-TooltipLabel/constants/shadow_offset_y = 1
 TooltipPanel/styles/panel = SubResource("151")
 Tree/colors/custom_button_font_highlight = Color(0.866992, 0.866992, 0.866992, 1)
 Tree/colors/drop_position_color = Color(0.184314, 0.396078, 0.533333, 1)
@@ -752,12 +782,7 @@ Tree/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
 Tree/colors/guide_color = Color(1, 1, 1, 0.05)
 Tree/colors/relationship_line_color = Color(1, 1, 1, 0.1)
 Tree/colors/title_button_color = Color(0.77832, 0.77832, 0.77832, 1)
-Tree/constants/button_margin = 4
-Tree/constants/draw_guides = 0
-Tree/constants/draw_relationship_lines = 1
-Tree/constants/item_margin = 12
 Tree/constants/scroll_border = 40
-Tree/constants/scroll_speed = 12
 Tree/styles/button_pressed = SubResource("156")
 Tree/styles/cursor = SubResource("157")
 Tree/styles/cursor_unfocused = SubResource("157")
@@ -769,18 +794,15 @@ Tree/styles/selected_focus = SubResource("96")
 Tree/styles/title_button_hover = SubResource("161")
 Tree/styles/title_button_normal = SubResource("161")
 Tree/styles/title_button_pressed = SubResource("161")
-VBoxContainer/constants/separation = 4
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_ri1fl")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_q3k4c")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_l27bo")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_bbug8")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_ktbsq")
-VSeparator/constants/separation = 4
 VSeparator/styles/separator = SubResource("167")
 VSlider/styles/grabber_area = SubResource("168")
 VSlider/styles/grabber_area_highlight = SubResource("169")
 VSlider/styles/slider = SubResource("170")
-VSplitContainer/constants/autohide = 1
 VSplitContainer/constants/separation = 8
 ValueSlider/base_type = &"TextureProgressBar"
 ValueSlider/colors/progress_color = Color(0.231373, 0.231373, 0.231373, 1)

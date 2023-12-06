@@ -42,6 +42,7 @@ text = "Button"
 [node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 toggle_mode = true
+button_pressed = true
 text = "Toggle Button"
 
 [node name="Button3" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
@@ -61,9 +62,19 @@ text = "Popup Window"
 layout_mode = 2
 text = "CheckButton"
 
+[node name="CheckButton2" type="CheckButton" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+disabled = true
+text = "Disabled CheckButton"
+
 [node name="CheckBox" type="CheckBox" parent="MarginContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "CheckBox"
+
+[node name="CheckBox2" type="CheckBox" parent="MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+disabled = true
+text = "Disabled CheckBox"
 
 [node name="MenuButton" type="MenuButton" parent="MarginContainer/HBoxContainer/Buttons"]
 layout_mode = 2
