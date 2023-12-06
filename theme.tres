@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=77 format=3 uid="uid://rglnetfnws4c"]
 
 [ext_resource type="Texture2D" uid="uid://bs1yr87ofrbcp" path="res://assets/graphics/misc/value_arrow.svg" id="1_2xbpi"]
-[ext_resource type="Texture2D" uid="uid://dyj2fdk8o6y72" path="res://assets/themes/checkbox_unpressed.png" id="1_7t0dk"]
-[ext_resource type="Texture2D" uid="uid://byrqt6l32kai5" path="res://assets/themes/radio_unpressed.png" id="1_hfhpa"]
+[ext_resource type="Texture2D" uid="uid://dyj2fdk8o6y72" path="res://assets/graphics/misc/checkbox_unpressed.png" id="1_7t0dk"]
+[ext_resource type="Texture2D" uid="uid://byrqt6l32kai5" path="res://assets/graphics/misc/radio_unpressed.png" id="1_hfhpa"]
 [ext_resource type="Texture2D" uid="uid://cpsao2x63p0iy" path="res://assets/graphics/misc/value_arrow_hover.svg" id="2_eypjx"]
 [ext_resource type="Texture2D" uid="uid://d1nfs05ukxpew" path="res://assets/graphics/misc/value_arrow_press.svg" id="3_grcu4"]
 [ext_resource type="Texture2D" uid="uid://dif1xoxo2gad1" path="res://assets/graphics/misc/value_slider.png" id="4_6y6or"]

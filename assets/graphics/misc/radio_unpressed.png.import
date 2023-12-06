@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byrqt6l32kai5"
-path="res://.godot/imported/radio_unpressed.png-f4885241ffbd2ff3ad4fe5c57517a72a.ctex"
+path="res://.godot/imported/radio_unpressed.png-a75f2d5cd86ae93980e481d43b3f4550.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/themes/radio_unpressed.png"
-dest_files=["res://.godot/imported/radio_unpressed.png-f4885241ffbd2ff3ad4fe5c57517a72a.ctex"]
+source_file="res://assets/graphics/misc/radio_unpressed.png"
+dest_files=["res://.godot/imported/radio_unpressed.png-a75f2d5cd86ae93980e481d43b3f4550.ctex"]
 
 [params]
 
