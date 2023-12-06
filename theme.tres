@@ -557,16 +557,16 @@ content_margin_left = 10.0
 content_margin_top = 28.0
 content_margin_right = 10.0
 content_margin_bottom = 8.0
-bg_color = Color(0.0703441, 0.0703441, 0.0703441, 1)
+bg_color = Color(0.321431, 0.321431, 0.321431, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
-expand_margin_left = 8.0
-expand_margin_top = 32.0
-expand_margin_right = 8.0
-expand_margin_bottom = 6.0
+expand_margin_left = 4.0
+expand_margin_top = 28.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmfk1"]
 content_margin_left = 10.0
@@ -579,10 +579,10 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
-expand_margin_left = 8.0
-expand_margin_top = 32.0
-expand_margin_right = 8.0
-expand_margin_bottom = 6.0
+expand_margin_left = 4.0
+expand_margin_top = 28.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 
 [resource]
 resource_name = "Dark"
