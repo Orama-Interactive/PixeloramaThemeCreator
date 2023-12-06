@@ -11,11 +11,22 @@ var theme_properties := {
 		ThemeProperty.new(&"normal", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"bg", &"Tree", Theme.DATA_TYPE_STYLEBOX),
 	],
-	"Secondary": [
+	"Secondary #1": [
 		ThemeProperty.new(&"panel", &"PanelContainer", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"AcceptDialog", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"TabContainer", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"clear_color", &"Misc"),
+	],
+	"Secondary #2": [
+		ThemeProperty.new(&"grabber", &"HScrollBar", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"grabber", &"VScrollBar", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"progress_color", &"ValueSlider"),
+		ThemeProperty.new(&"selected", &"Tree", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"selected_focus", &"Tree", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"disabled", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"focus", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"hover", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"normal", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
 	],
 	"Accent": [
 		ThemeProperty.new(&"pressed", &"Button", Theme.DATA_TYPE_STYLEBOX, true),
@@ -25,15 +36,12 @@ var theme_properties := {
 		ThemeProperty.new(&"tab_selected", &"TabBar", Theme.DATA_TYPE_STYLEBOX, true),
 		ThemeProperty.new(&"tab_focus", &"TabContainer", Theme.DATA_TYPE_STYLEBOX, true),
 		ThemeProperty.new(&"tab_selected", &"TabContainer", Theme.DATA_TYPE_STYLEBOX, true),
-		ThemeProperty.new(&"selected", &"Tree", Theme.DATA_TYPE_STYLEBOX),
-		ThemeProperty.new(&"selected_focus", &"Tree", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"font_focus_color", &"Button"),
 		ThemeProperty.new(&"font_hover_color", &"Button"),
 		ThemeProperty.new(&"font_hover_pressed_color", &"Button"),
 		ThemeProperty.new(&"font_pressed_color", &"Button"),
 		ThemeProperty.new(&"icon_color_pressed", &"Button"),
 		ThemeProperty.new(&"modulate_color", &"Icons"),
-		ThemeProperty.new(&"progress_color", &"ValueSlider"),
 	],
 	"Text color": [
 		ThemeProperty.new(&"font_color", &"Button"),
@@ -60,10 +68,6 @@ var theme_properties := {
 		ThemeProperty.new(&"font_uneditable_color", &"TextEdit"),
 		ThemeProperty.new(&"font_disabled_color", &"TabBar"),
 		ThemeProperty.new(&"font_disabled_color", &"TabContainer"),
-	],
-	"Sliders": [
-		ThemeProperty.new(&"grabber", &"HScrollBar", Theme.DATA_TYPE_STYLEBOX),
-		ThemeProperty.new(&"grabber", &"VScrollBar", Theme.DATA_TYPE_STYLEBOX),
 	],
 	"Window border": [
 		ThemeProperty.new(&"embedded_border", &"Window", Theme.DATA_TYPE_STYLEBOX),
