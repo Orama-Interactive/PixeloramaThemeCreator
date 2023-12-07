@@ -9,15 +9,23 @@ var theme_properties := {
 		ThemeProperty.new(&"hover", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"normal", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"pressed", &"Button", Theme.DATA_TYPE_STYLEBOX),
-		ThemeProperty.new(&"bg", &"Tree", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"panel", &"ItemList", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"panel", &"Tree", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"focus", &"LineEdit", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"normal", &"LineEdit", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"read_only", &"LineEdit", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"focus", &"TextEdit", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"normal", &"TextEdit", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"read_only", &"TextEdit", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"under_color", &"ValueSlider"),
 		ThemeProperty.new(&"panel", &"PopupPanel", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"PopupMenu", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"tab_focus", &"TabBar", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"tab_selected", &"TabBar", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"tab_unselected", &"TabBar", Theme.DATA_TYPE_STYLEBOX, false, _darken.bind(0.3)),
+		ThemeProperty.new(&"tab_focus", &"TabContainer", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"tab_selected", &"TabContainer", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"tab_unselected", &"TabContainer", Theme.DATA_TYPE_STYLEBOX, false, _darken.bind(0.3)),
 	],
 	"Primary": [
 		ThemeProperty.new(&"panel", &"PanelContainer", Theme.DATA_TYPE_STYLEBOX),
@@ -28,15 +36,21 @@ var theme_properties := {
 	],
 	"Secondary": [
 		ThemeProperty.new(&"grabber", &"HScrollBar", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"grabber_pressed", &"HScrollBar", Theme.DATA_TYPE_STYLEBOX, false, _lighten.bind(0.2)),
+		ThemeProperty.new(&"grabber_highlight", &"HScrollBar", Theme.DATA_TYPE_STYLEBOX, false, _lighten.bind(0.3)),
 		ThemeProperty.new(&"grabber", &"VScrollBar", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"grabber_pressed", &"VScrollBar", Theme.DATA_TYPE_STYLEBOX, false, _lighten.bind(0.2)),
+		ThemeProperty.new(&"grabber_highlight", &"VScrollBar", Theme.DATA_TYPE_STYLEBOX, false, _lighten.bind(0.3)),
 		ThemeProperty.new(&"progress_color", &"ValueSlider"),
+		ThemeProperty.new(&"selected", &"ItemList", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"selected_focus", &"ItemList", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"selected", &"Tree", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"selected_focus", &"Tree", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"disabled", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"focus", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"hover", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"normal", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
-		ThemeProperty.new(&"panel", &"TooltipPanel", Theme.DATA_TYPE_STYLEBOX, false, true),
+		ThemeProperty.new(&"panel", &"TooltipPanel", Theme.DATA_TYPE_STYLEBOX, false, _invert_color),
 	],
 	"Accent": [
 		ThemeProperty.new(&"pressed", &"Button", Theme.DATA_TYPE_STYLEBOX, true),
@@ -50,35 +64,39 @@ var theme_properties := {
 		ThemeProperty.new(&"font_hover_color", &"Button"),
 		ThemeProperty.new(&"font_hover_pressed_color", &"Button"),
 		ThemeProperty.new(&"font_pressed_color", &"Button"),
-		ThemeProperty.new(&"icon_color_pressed", &"Button"),
+		ThemeProperty.new(&"icon_normal_color", &"Button"),
+		ThemeProperty.new(&"icon_pressed_color", &"Button", Theme.DATA_TYPE_COLOR, false, _lighten.bind(0.2)),
+		ThemeProperty.new(&"icon_hover_pressed_color", &"Button", Theme.DATA_TYPE_COLOR, false, _lighten.bind(0.2)),
+		ThemeProperty.new(&"icon_hover_color", &"Button", Theme.DATA_TYPE_COLOR, false, _lighten.bind(0.3)),
 		ThemeProperty.new(&"modulate_color", &"Icons"),
 	],
 	"Text color": [
 		ThemeProperty.new(&"font_color", &"Button"),
 		ThemeProperty.new(&"font_color", &"MenuButton"),
+		ThemeProperty.new(&"font_color", &"PopupMenu"),
 		ThemeProperty.new(&"font_color", &"OptionButton"),
 		ThemeProperty.new(&"font_color", &"ProgressBar"),
 		ThemeProperty.new(&"font_color", &"Label"),
 		ThemeProperty.new(&"font_color", &"LineEdit"),
 		ThemeProperty.new(&"font_color", &"TextEdit"),
+		ThemeProperty.new(&"font_color", &"ItemList"),
 		ThemeProperty.new(&"font_color", &"Tree"),
 		ThemeProperty.new(&"font_selected_color", &"TabBar"),
 		ThemeProperty.new(&"font_unselected_color", &"TabBar"),
 		ThemeProperty.new(&"font_selected_color", &"TabContainer"),
 		ThemeProperty.new(&"font_unselected_color", &"TabContainer"),
 		ThemeProperty.new(&"title_color", &"Window"),
-		ThemeProperty.new(&"font_color", &"TooltipLabel", Theme.DATA_TYPE_COLOR, false, true),
-	],
-	"Disabled text color": [
-		ThemeProperty.new(&"font_disabled_color", &"Button"),
-		ThemeProperty.new(&"icon_disabled_color", &"Button"),
-		ThemeProperty.new(&"font_disabled_color", &"MenuButton"),
-		ThemeProperty.new(&"font_disabled_color", &"OptionButton"),
-		ThemeProperty.new(&"font_disabled_color", &"PopupMenu"),
-		ThemeProperty.new(&"font_uneditable_color", &"LineEdit"),
-		ThemeProperty.new(&"font_uneditable_color", &"TextEdit"),
-		ThemeProperty.new(&"font_disabled_color", &"TabBar"),
-		ThemeProperty.new(&"font_disabled_color", &"TabContainer"),
+		ThemeProperty.new(&"font_color", &"TooltipLabel", Theme.DATA_TYPE_COLOR, false, _invert_color),
+		ThemeProperty.new(&"font_disabled_color", &"Button", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
+		ThemeProperty.new(&"icon_disabled_color", &"Button", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
+		ThemeProperty.new(&"font_disabled_color", &"MenuButton", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
+		ThemeProperty.new(&"font_disabled_color", &"PopupMenu", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
+		ThemeProperty.new(&"font_disabled_color", &"OptionButton", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
+		ThemeProperty.new(&"font_disabled_color", &"PopupMenu", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
+		ThemeProperty.new(&"font_uneditable_color", &"LineEdit", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
+		ThemeProperty.new(&"font_uneditable_color", &"TextEdit", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
+		ThemeProperty.new(&"font_disabled_color", &"TabBar", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
+		ThemeProperty.new(&"font_disabled_color", &"TabContainer", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
 	],
 	"Window border": [
 		ThemeProperty.new(&"embedded_border", &"Window", Theme.DATA_TYPE_STYLEBOX),
@@ -86,7 +104,7 @@ var theme_properties := {
 }
 
 @onready var grid_container := %GridContainer as GridContainer
-@onready var theme_preview: Panel = %ThemePreview
+@onready var theme_name_line_edit: LineEdit = %ThemeNameLineEdit
 
 
 class ThemeProperty:
@@ -94,24 +112,24 @@ class ThemeProperty:
 	var name := &""
 	var theme_type := &""
 	var border := false
-	var inverted := false
+	var method := Callable()
 
 	func _init(
 			_name: StringName,
 			_theme_type: StringName,
 			_data_type := Theme.DATA_TYPE_COLOR,
 			_border := false,
-			_inverted := false
+			_method := Callable()
 		) -> void:
 		name = _name
 		theme_type = _theme_type
 		data_type = _data_type
 		border = _border
-		inverted = _inverted
+		method = _method
 
 	func set_color(theme: Theme, color: Color) -> void:
-		if inverted:
-			color = color.inverted()
+		if method.is_valid():
+			color = method.call(color)
 		if data_type == Theme.DATA_TYPE_COLOR:
 			theme.set_color(name, theme_type, color)
 		elif data_type == Theme.DATA_TYPE_STYLEBOX:
@@ -142,7 +160,7 @@ class ThemeProperty:
 
 
 func _ready() -> void:
-	theme_preview.theme = theme_to_apply
+	theme = theme_to_apply
 	for color_group: String in theme_properties.keys():
 		var properties: Array = theme_properties[color_group]
 		var first_property: ThemeProperty = properties[0]
@@ -164,4 +182,23 @@ func color_changed(color: Color, properties: Array) -> void:
 
 
 func _on_save_button_pressed() -> void:
+	theme_to_apply.resource_name = theme_name_line_edit.text
 	ResourceSaver.save(theme_to_apply, "user://theme.tres")
+
+
+func _invert_color(color: Color) -> Color:
+	return color.inverted()
+
+
+func _halve_alpha(color: Color) -> Color:
+	var new_color := color
+	new_color.a /= 2.0
+	return new_color
+
+
+func _lighten(color: Color, amount: float) -> Color:
+	return color.lightened(amount)
+
+
+func _darken(color: Color, amount: float) -> Color:
+	return color.darkened(amount)
