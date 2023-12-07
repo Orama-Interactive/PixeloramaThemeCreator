@@ -1,5 +1,7 @@
 extends Control
 
+enum Palettes {DARK, GRAY, BLUE, CARAMEL, LIGHT, PURPLE}
+
 var theme_to_apply := theme.duplicate() as Theme
 var theme_properties := {
 	"Background": [
@@ -102,7 +104,15 @@ var theme_properties := {
 		ThemeProperty.new(&"embedded_border", &"Window", Theme.DATA_TYPE_STYLEBOX),
 	]
 }
-
+## Background, Primary, Secondary, Accent, Text, Window border
+var palettes: Array[PackedColorArray] = [
+	[Color("171717"), Color("242424"), Color("3b3b3b"), Color.WHITE, Color("c6c6c6"), Color("525252")],  # Dark
+	[Color("3a3a3a"), Color("303030"), Color("3a3a3a"), Color.WHITE, Color("c6c6c6"), Color("484848")],  # Gray
+	[Color("47526e"), Color("333b4f"), Color("262c3b"), Color.WHITE, Color("c6c6c6"), Color("2b303d")],  # Blue
+	[Color("b6946c"), Color("ddb370"), Color("b6946c"), Color.BLACK, Color("3d3124"), Color("705a42")],  # Caramel
+	[Color("667883"), Color("e0dddd"), Color("9cafba"), Color.BLACK, Color("494b4d"), Color("adadad")],  # Light
+	[Color("261736"), Color("321f48"), Color("4f445c"), Color.WHITE, Color("ccc7d1"), Color("1e122b")],  # Purple
+]
 @onready var grid_container := %GridContainer as GridContainer
 @onready var theme_name_line_edit: LineEdit = %ThemeNameLineEdit
 
@@ -168,6 +178,7 @@ func _ready() -> void:
 		label.text = color_group
 		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		var color_picker := ColorPickerButton.new()
+		color_picker.name = color_group + "ColorPicker"
 		color_picker.color = first_property.get_color(theme_to_apply)
 		color_picker.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		color_picker.color_changed.connect(color_changed.bind(properties))
@@ -202,3 +213,13 @@ func _lighten(color: Color, amount: float) -> Color:
 
 func _darken(color: Color, amount: float) -> Color:
 	return color.darkened(amount)
+
+
+func _on_palette_option_button_item_selected(index: int) -> void:
+	var i := 0
+	for child in grid_container.get_children():
+		if not child is ColorPickerButton:
+			continue
+		(child as ColorPickerButton).color = palettes[index][i]
+		(child as ColorPickerButton).color_changed.emit(palettes[index][i])
+		i += 1

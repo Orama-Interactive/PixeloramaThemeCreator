@@ -1,9 +1,9 @@
 @tool
 extends Panel
 
-@onready var tab_container: TabContainer = $MarginContainer/HBoxContainer/VBoxContainer2/TabContainer
-@onready var popup_window: Button = $MarginContainer/HBoxContainer/Buttons/PopupWindow
-@onready var tree: Tree = $MarginContainer/HBoxContainer/VBoxContainer2/Tree
+@onready var tab_container: TabContainer = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/TabContainer
+@onready var popup_window: Button = $MarginContainer/VBoxContainer/HBoxContainer/Buttons/PopupWindow
+@onready var tree: Tree = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Tree
 @onready var accept_dialog: AcceptDialog = $AcceptDialog
 
 

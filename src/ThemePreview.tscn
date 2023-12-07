@@ -24,60 +24,67 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Buttons" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PREVIEW:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "Label"
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 tooltip_text = "This is a button"
 text = "Button"
 
-[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
 text = "Toggle Button"
 
-[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 disabled = true
 text = "Disabled Button"
 
-[node name="Button4" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="Button4" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "Button"
 
-[node name="PopupWindow" type="Button" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="PopupWindow" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "Popup Window"
 
-[node name="CheckButton" type="CheckButton" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "CheckButton"
 
-[node name="CheckButton2" type="CheckButton" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="CheckButton2" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 disabled = true
 text = "Disabled CheckButton"
 
-[node name="CheckBox" type="CheckBox" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "CheckBox"
 
-[node name="CheckBox2" type="CheckBox" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="CheckBox2" type="CheckBox" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 disabled = true
 text = "Disabled CheckBox"
 
-[node name="MenuButton" type="MenuButton" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="MenuButton" type="MenuButton" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "MenuButton"
 item_count = 9
@@ -110,7 +117,7 @@ popup/item_8/text = "Named Separator"
 popup/item_8/id = 8
 popup/item_8/separator = true
 
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 item_count = 5
 selected = 0
@@ -126,90 +133,90 @@ popup/item_3/id = 3
 popup/item_4/text = "Options"
 popup/item_4/id = 4
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/HBoxContainer/Buttons"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "ColorPickerButton"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "LineEdit"
 
-[node name="LineEdit2" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="LineEdit2" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Disabled LineEdit"
 editable = false
 
-[node name="TextEdit" type="TextEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 93)
 layout_mode = 2
 text = "TextEdit"
 
-[node name="SpinBox" type="SpinBox" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VSlider" type="VSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VSlider" type="VSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 value = 20.0
 
-[node name="VScrollBar" type="VScrollBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VScrollBar" type="VScrollBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HScrollBar" type="HScrollBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="HScrollBar" type="HScrollBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HSlider2" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="HSlider2" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 editable = false
 
-[node name="TextureProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="TextureProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 value = 50.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TabContainer" type="TabContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
-[node name="Tab 1" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2/TabContainer"]
+[node name="Tab 1" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/TabContainer"]
 layout_mode = 2
 
-[node name="Tab 2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2/TabContainer"]
+[node name="Tab 2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="Tab 3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2/TabContainer"]
+[node name="Tab 3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="Tree" type="Tree" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="Tree" type="Tree" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Button in PanelContainer"
