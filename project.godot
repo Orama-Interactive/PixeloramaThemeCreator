@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="PixeloramaThemeCreator"
+config/name="Pixelorama theme creator"
+config/description="A tool for easily creating themes for Pixelorama "
 run/main_scene="res://src/Main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
