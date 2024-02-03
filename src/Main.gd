@@ -7,7 +7,6 @@ var theme_properties := {
 	"Background": [
 		ThemeProperty.new(&"panel", &"Panel", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"disabled", &"Button", Theme.DATA_TYPE_STYLEBOX),
-		ThemeProperty.new(&"focus", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"hover", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"normal", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"pressed", &"Button", Theme.DATA_TYPE_STYLEBOX),
@@ -56,6 +55,7 @@ var theme_properties := {
 	],
 	"Accent": [
 		ThemeProperty.new(&"pressed", &"Button", Theme.DATA_TYPE_STYLEBOX, true),
+		ThemeProperty.new(&"focus", &"Button", Theme.DATA_TYPE_STYLEBOX, true, _change_brightness.bind(0.2)),
 		ThemeProperty.new(&"focus", &"LineEdit", Theme.DATA_TYPE_STYLEBOX, true),
 		ThemeProperty.new(&"focus", &"TextEdit", Theme.DATA_TYPE_STYLEBOX, true),
 		ThemeProperty.new(&"tab_focus", &"TabBar", Theme.DATA_TYPE_STYLEBOX, true),
@@ -205,6 +205,12 @@ func _halve_alpha(color: Color) -> Color:
 	var new_color := color
 	new_color.a /= 2.0
 	return new_color
+
+
+func _change_brightness(color: Color, amount: float) -> Color:
+	if color.v > 0.5:
+		return _darken(color, amount)
+	return _lighten(color, amount)
 
 
 func _lighten(color: Color, amount: float) -> Color:
