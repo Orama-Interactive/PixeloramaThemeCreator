@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=80 format=3 uid="uid://d34181b1xcot5"]
+[gd_resource type="Theme" load_steps=81 format=3 uid="uid://d34181b1xcot5"]
 
 [ext_resource type="Texture2D" uid="uid://byrqt6l32kai5" path="res://assets/graphics/misc/radio_unpressed.png" id="1_8xoaj"]
 [ext_resource type="Texture2D" uid="uid://dyj2fdk8o6y72" path="res://assets/graphics/misc/checkbox_unpressed.png" id="2_wd0k0"]
@@ -39,6 +39,14 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nv6tl"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0f5f"]
@@ -683,7 +691,7 @@ Button/colors/icon_normal_color = Color(1, 1, 1, 1)
 Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
 Button/styles/disabled = SubResource("23")
 Button/styles/focus = SubResource("StyleBoxFlat_kpwev")
-Button/styles/hover = SubResource("23")
+Button/styles/hover = SubResource("StyleBoxFlat_nv6tl")
 Button/styles/normal = SubResource("23")
 Button/styles/pressed = SubResource("StyleBoxFlat_t0f5f")
 CheckBox/icons/radio_unchecked = ExtResource("1_8xoaj")

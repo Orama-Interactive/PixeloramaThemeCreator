@@ -7,7 +7,7 @@ var theme_properties := {
 	"Background": [
 		ThemeProperty.new(&"panel", &"Panel", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"disabled", &"Button", Theme.DATA_TYPE_STYLEBOX),
-		ThemeProperty.new(&"hover", &"Button", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"hover", &"Button", Theme.DATA_TYPE_STYLEBOX, false, _halve_alpha),
 		ThemeProperty.new(&"normal", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"pressed", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"ItemList", Theme.DATA_TYPE_STYLEBOX),
@@ -114,7 +114,8 @@ var palettes: Array[PackedColorArray] = [
 	[Color("261736"), Color("321f48"), Color("4f445c"), Color.WHITE, Color("ccc7d1"), Color("1e122b")],  # Purple
 ]
 @onready var grid_container := %GridContainer as GridContainer
-@onready var theme_name_line_edit: LineEdit = %ThemeNameLineEdit
+@onready var palette_option_button := %PaletteOptionButton as OptionButton
+@onready var theme_name_line_edit := %ThemeNameLineEdit as LineEdit
 
 
 class ThemeProperty:
@@ -222,6 +223,7 @@ func _darken(color: Color, amount: float) -> Color:
 
 
 func _on_palette_option_button_item_selected(index: int) -> void:
+	theme_name_line_edit.text = palette_option_button.get_item_text(index)
 	var i := 0
 	for child in grid_container.get_children():
 		if not child is ColorPickerButton:
