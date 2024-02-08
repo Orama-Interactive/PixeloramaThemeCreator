@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=81 format=3 uid="uid://d34181b1xcot5"]
+[gd_resource type="Theme" load_steps=86 format=3 uid="uid://d34181b1xcot5"]
 
 [ext_resource type="Texture2D" uid="uid://byrqt6l32kai5" path="res://assets/graphics/misc/radio_unpressed.png" id="1_8xoaj"]
 [ext_resource type="Texture2D" uid="uid://dyj2fdk8o6y72" path="res://assets/graphics/misc/checkbox_unpressed.png" id="2_wd0k0"]
@@ -60,6 +60,57 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qcnj"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.231373, 0.231373, 0.231373, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hww6"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 0.498039)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a57y0"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.141176, 0.141176, 0.141176, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t43bd"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbyuh"]
 content_margin_top = 4.0
@@ -294,6 +345,22 @@ border_color = Color(0.113281, 0.113281, 0.113281, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u871w"]
 content_margin_top = 4.0
 content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o72qi"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.231373, 0.231373, 0.231373, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="3"]
 content_margin_left = 6.0
@@ -694,6 +761,11 @@ Button/styles/focus = SubResource("StyleBoxFlat_kpwev")
 Button/styles/hover = SubResource("StyleBoxFlat_nv6tl")
 Button/styles/normal = SubResource("23")
 Button/styles/pressed = SubResource("StyleBoxFlat_t0f5f")
+CelButton/base_type = &"Button"
+CelButton/styles/guide = SubResource("StyleBoxFlat_1qcnj")
+CelButton/styles/hover = SubResource("StyleBoxFlat_8hww6")
+CelButton/styles/normal = SubResource("StyleBoxFlat_a57y0")
+CelButton/styles/pressed = SubResource("StyleBoxFlat_t43bd")
 CheckBox/icons/radio_unchecked = ExtResource("1_8xoaj")
 CheckBox/icons/radio_unchecked_disabled = ExtResource("1_8xoaj")
 CheckBox/icons/unchecked = ExtResource("2_wd0k0")
@@ -746,6 +818,8 @@ ItemList/styles/selected = SubResource("95")
 ItemList/styles/selected_focus = SubResource("96")
 Label/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
 Label/styles/normal = SubResource("StyleBoxEmpty_u871w")
+LayerFrameButton/base_type = &"CelButton"
+LayerFrameButton/styles/pressed = SubResource("StyleBoxFlat_o72qi")
 LineEdit/colors/clear_button_color = Color(0.77832, 0.77832, 0.77832, 1)
 LineEdit/colors/clear_button_color_pressed = Color(0.184314, 0.396078, 0.533333, 1)
 LineEdit/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)

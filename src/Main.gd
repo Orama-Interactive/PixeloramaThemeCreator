@@ -5,9 +5,11 @@ enum Palettes {DARK, GRAY, BLUE, CARAMEL, LIGHT, PURPLE}
 var theme_to_apply := theme.duplicate() as Theme
 var theme_properties := {
 	"Background": [
+		ThemeProperty.new(&"normal", &"CelButton", Theme.DATA_TYPE_STYLEBOX, true),
+		ThemeProperty.new(&"hover", &"CelButton", Theme.DATA_TYPE_STYLEBOX, true),
+		ThemeProperty.new(&"guide", &"CelButton", Theme.DATA_TYPE_STYLEBOX, true),
 		ThemeProperty.new(&"panel", &"Panel", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"disabled", &"Button", Theme.DATA_TYPE_STYLEBOX),
-		ThemeProperty.new(&"hover", &"Button", Theme.DATA_TYPE_STYLEBOX, false, _halve_alpha),
 		ThemeProperty.new(&"normal", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"pressed", &"Button", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"ItemList", Theme.DATA_TYPE_STYLEBOX),
@@ -29,6 +31,7 @@ var theme_properties := {
 		ThemeProperty.new(&"tab_unselected", &"TabContainer", Theme.DATA_TYPE_STYLEBOX, false, _darken.bind(0.3)),
 	],
 	"Primary": [
+		ThemeProperty.new(&"normal", &"CelButton", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"PanelContainer", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"AcceptDialog", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"panel", &"TabContainer", Theme.DATA_TYPE_STYLEBOX),
@@ -43,6 +46,10 @@ var theme_properties := {
 		ThemeProperty.new(&"grabber_pressed", &"VScrollBar", Theme.DATA_TYPE_STYLEBOX, false, _lighten.bind(0.2)),
 		ThemeProperty.new(&"grabber_highlight", &"VScrollBar", Theme.DATA_TYPE_STYLEBOX, false, _lighten.bind(0.3)),
 		ThemeProperty.new(&"progress_color", &"ValueSlider"),
+		ThemeProperty.new(&"hover", &"Button", Theme.DATA_TYPE_STYLEBOX, false, _halve_alpha),
+		ThemeProperty.new(&"hover", &"CelButton", Theme.DATA_TYPE_STYLEBOX, false, _halve_alpha),
+		ThemeProperty.new(&"guide", &"CelButton", Theme.DATA_TYPE_STYLEBOX),
+		ThemeProperty.new(&"pressed", &"LayerFrameButton", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"selected", &"ItemList", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"selected_focus", &"ItemList", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"selected", &"Tree", Theme.DATA_TYPE_STYLEBOX),
@@ -55,6 +62,8 @@ var theme_properties := {
 	],
 	"Accent": [
 		ThemeProperty.new(&"pressed", &"Button", Theme.DATA_TYPE_STYLEBOX, true),
+		ThemeProperty.new(&"pressed", &"CelButton", Theme.DATA_TYPE_STYLEBOX, true),
+		ThemeProperty.new(&"pressed", &"LayerFrameButton", Theme.DATA_TYPE_STYLEBOX, true),
 		ThemeProperty.new(&"focus", &"Button", Theme.DATA_TYPE_STYLEBOX, true, _change_brightness.bind(0.2)),
 		ThemeProperty.new(&"focus", &"LineEdit", Theme.DATA_TYPE_STYLEBOX, true),
 		ThemeProperty.new(&"focus", &"TextEdit", Theme.DATA_TYPE_STYLEBOX, true),
@@ -71,6 +80,9 @@ var theme_properties := {
 		ThemeProperty.new(&"icon_hover_pressed_color", &"Button", Theme.DATA_TYPE_COLOR, false, _lighten.bind(0.2)),
 		ThemeProperty.new(&"icon_hover_color", &"Button", Theme.DATA_TYPE_COLOR, false, _lighten.bind(0.3)),
 		ThemeProperty.new(&"modulate_color", &"Icons"),
+	],
+	"Accent #2": [
+		ThemeProperty.new(&"pressed", &"CelButton", Theme.DATA_TYPE_STYLEBOX),
 	],
 	"Text color": [
 		ThemeProperty.new(&"font_color", &"Button"),
@@ -104,14 +116,14 @@ var theme_properties := {
 		ThemeProperty.new(&"embedded_border", &"Window", Theme.DATA_TYPE_STYLEBOX),
 	]
 }
-## Background, Primary, Secondary, Accent, Text, Window border
+## Background, Primary, Secondary, Accent, Accent #2, Text, Window border
 var palettes: Array[PackedColorArray] = [
-	[Color("171717"), Color("242424"), Color("3b3b3b"), Color.WHITE, Color("c6c6c6"), Color("525252")],  # Dark
-	[Color("3a3a3a"), Color("303030"), Color("3a3a3a"), Color.WHITE, Color("c6c6c6"), Color("484848")],  # Gray
-	[Color("47526e"), Color("333b4f"), Color("262c3b"), Color.WHITE, Color("c6c6c6"), Color("2b303d")],  # Blue
-	[Color("b6946c"), Color("ddb370"), Color("b6946c"), Color.BLACK, Color("3d3124"), Color("705a42")],  # Caramel
-	[Color("667883"), Color("e0dddd"), Color("9cafba"), Color.BLACK, Color("494b4d"), Color("adadad")],  # Light
-	[Color("261736"), Color("321f48"), Color("4f445c"), Color.WHITE, Color("ccc7d1"), Color("1e122b")],  # Purple
+	[Color("171717"), Color("242424"), Color("3b3b3b"), Color("c0c0c0"), Color("999999"), Color("c6c6c6"), Color("525252")],  # Dark
+	[Color("3a3a3a"), Color("303030"), Color("3a3a3a"), Color("c0c0c0"), Color("999999"), Color("c6c6c6"), Color("484848")],  # Gray
+	[Color("47526e"), Color("333b4f"), Color("262c3b"), Color("92a8e0"), Color("7182ad"), Color("c6c6c6"), Color("2b303d")],  # Blue
+	[Color("b6946c"), Color("ddb370"), Color("b6946c"), Color.BLACK, Color("999999"), Color("3d3124"), Color("705a42")],  # Caramel
+	[Color("667883"), Color("e0dddd"), Color("9cafba"), Color.BLACK, Color("999999"), Color("494b4d"), Color("adadad")],  # Light
+	[Color("261736"), Color("321f48"), Color("4f445c"), Color.WHITE, Color("999999"), Color("ccc7d1"), Color("1e122b")],  # Purple
 ]
 @onready var grid_container := %GridContainer as GridContainer
 @onready var palette_option_button := %PaletteOptionButton as OptionButton
