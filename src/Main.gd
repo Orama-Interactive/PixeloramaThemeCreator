@@ -29,6 +29,7 @@ var theme_properties := {
 		ThemeProperty.new(&"tab_focus", &"TabContainer", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"tab_selected", &"TabContainer", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"tab_unselected", &"TabContainer", Theme.DATA_TYPE_STYLEBOX, false, _darken.bind(0.3)),
+		ThemeProperty.new(&"panel", &"TooltipPanel", Theme.DATA_TYPE_STYLEBOX),
 	],
 	"Primary": [
 		ThemeProperty.new(&"normal", &"CelButton", Theme.DATA_TYPE_STYLEBOX),
@@ -48,6 +49,7 @@ var theme_properties := {
 		ThemeProperty.new(&"progress_color", &"ValueSlider"),
 		ThemeProperty.new(&"hover", &"Button", Theme.DATA_TYPE_STYLEBOX, false, _halve_alpha),
 		ThemeProperty.new(&"hover", &"CelButton", Theme.DATA_TYPE_STYLEBOX, false, _halve_alpha),
+		ThemeProperty.new(&"hover", &"PopupMenu", Theme.DATA_TYPE_STYLEBOX, false, _halve_alpha),
 		ThemeProperty.new(&"guide", &"CelButton", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"pressed", &"LayerFrameButton", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"selected", &"ItemList", Theme.DATA_TYPE_STYLEBOX),
@@ -58,7 +60,6 @@ var theme_properties := {
 		ThemeProperty.new(&"focus", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"hover", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
 		ThemeProperty.new(&"normal", &"RulerButton", Theme.DATA_TYPE_STYLEBOX),
-		ThemeProperty.new(&"panel", &"TooltipPanel", Theme.DATA_TYPE_STYLEBOX, false, _invert_color),
 	],
 	"Accent": [
 		ThemeProperty.new(&"pressed", &"Button", Theme.DATA_TYPE_STYLEBOX, true),
@@ -79,7 +80,10 @@ var theme_properties := {
 		ThemeProperty.new(&"icon_pressed_color", &"Button", Theme.DATA_TYPE_COLOR, false, _lighten.bind(0.2)),
 		ThemeProperty.new(&"icon_hover_pressed_color", &"Button", Theme.DATA_TYPE_COLOR, false, _lighten.bind(0.2)),
 		ThemeProperty.new(&"icon_hover_color", &"Button", Theme.DATA_TYPE_COLOR, false, _lighten.bind(0.3)),
+		ThemeProperty.new(&"font_hover_color", &"PopupMenu"),
+		ThemeProperty.new(&"font_hovered_color", &"ItemList"),
 		ThemeProperty.new(&"modulate_color", &"Icons"),
+		ThemeProperty.new(&"panel", &"TooltipPanel", Theme.DATA_TYPE_STYLEBOX, true),
 	],
 	"Accent #2": [
 		ThemeProperty.new(&"pressed", &"CelButton", Theme.DATA_TYPE_STYLEBOX),
@@ -101,7 +105,7 @@ var theme_properties := {
 		ThemeProperty.new(&"font_selected_color", &"TabContainer"),
 		ThemeProperty.new(&"font_unselected_color", &"TabContainer"),
 		ThemeProperty.new(&"title_color", &"Window"),
-		ThemeProperty.new(&"font_color", &"TooltipLabel", Theme.DATA_TYPE_COLOR, false, _invert_color),
+		ThemeProperty.new(&"font_color", &"TooltipLabel"),
 		ThemeProperty.new(&"font_disabled_color", &"Button", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
 		ThemeProperty.new(&"icon_disabled_color", &"Button", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
 		ThemeProperty.new(&"font_disabled_color", &"MenuButton", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
@@ -126,7 +130,7 @@ var palettes: Array[PackedColorArray] = [
 	[Color("b16832"), Color("cf874d"), Color("ce7c40"), Color("ffcd86"), Color("d88141"), Color("f8cc9d"), Color("995d42")],  # Caramel
 	[Color("e7f1f7"), Color("dbe4f0"), Color("aaccf8"), Color("afc4de"), Color("afc4de"), Color("497199"), Color("90afca")],  # Light
 	[Color("433057"), Color("623b78"), Color("7a4d8e"), Color("d093dd"), Color("9e66b5"), Color("ae72d0"), Color("3d2446")],  # Purple
-	[Color("a53753"), Color("c85676"), Color("df6f89"), Color("f69bb2"), Color("c14d68"), Color("651717"), Color("61283d")],  # Rose
+	[Color("a53753"), Color("c85676"), Color("df6f89"), Color("f69bb2"), Color("c14d68"), Color("651717"), Color("943d5d")],  # Rose
 ]
 @onready var grid_container := %GridContainer as GridContainer
 @onready var palette_option_button := %PaletteOptionButton as OptionButton
