@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=86 format=3 uid="uid://d34181b1xcot5"]
+[gd_resource type="Theme" load_steps=85 format=3 uid="uid://d34181b1xcot5"]
 
 [ext_resource type="Texture2D" uid="uid://byrqt6l32kai5" path="res://assets/graphics/misc/radio_unpressed.png" id="1_8xoaj"]
 [ext_resource type="Texture2D" uid="uid://dyj2fdk8o6y72" path="res://assets/graphics/misc/checkbox_unpressed.png" id="2_wd0k0"]
@@ -416,22 +416,6 @@ content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxFlat" id="6"]
-content_margin_left = 6.0
-content_margin_top = 4.0
-content_margin_right = 6.0
-content_margin_bottom = 4.0
-bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.184314, 0.396078, 0.533333, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
 [sub_resource type="StyleBoxFlat" id="103"]
 content_margin_left = 6.0
 content_margin_top = 4.0
@@ -833,18 +817,14 @@ MarginContainer/constants/margin_bottom = 2
 MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 2
+MenuBar/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+MenuBar/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 MenuButton/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
 MenuButton/colors/font_disabled_color = Color(0.776471, 0.776471, 0.776471, 0.5)
-MenuButton/styles/disabled = SubResource("23")
-MenuButton/styles/focus = SubResource("23")
-MenuButton/styles/hover = SubResource("23")
-MenuButton/styles/normal = SubResource("23")
-MenuButton/styles/pressed = SubResource("23")
 Misc/colors/clear_color = Color(0.141176, 0.141176, 0.141176, 1)
 OptionButton/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
 OptionButton/colors/font_disabled_color = Color(0.776471, 0.776471, 0.776471, 0.5)
 OptionButton/styles/disabled = SubResource("2")
-OptionButton/styles/pressed = SubResource("6")
 Panel/styles/panel = SubResource("103")
 PanelContainer/styles/panel = SubResource("104")
 PopupMenu/colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)

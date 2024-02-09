@@ -87,6 +87,7 @@ var theme_properties := {
 	"Text color": [
 		ThemeProperty.new(&"font_color", &"Button"),
 		ThemeProperty.new(&"font_color", &"MenuButton"),
+		ThemeProperty.new(&"font_color", &"MenuBar"),
 		ThemeProperty.new(&"font_color", &"PopupMenu"),
 		ThemeProperty.new(&"font_color", &"OptionButton"),
 		ThemeProperty.new(&"font_color", &"ProgressBar"),
@@ -104,6 +105,7 @@ var theme_properties := {
 		ThemeProperty.new(&"font_disabled_color", &"Button", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
 		ThemeProperty.new(&"icon_disabled_color", &"Button", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
 		ThemeProperty.new(&"font_disabled_color", &"MenuButton", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
+		ThemeProperty.new(&"font_disabled_color", &"MenuBar", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
 		ThemeProperty.new(&"font_disabled_color", &"PopupMenu", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
 		ThemeProperty.new(&"font_disabled_color", &"OptionButton", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
 		ThemeProperty.new(&"font_disabled_color", &"PopupMenu", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
@@ -119,11 +121,12 @@ var theme_properties := {
 ## Background, Primary, Secondary, Accent, Accent #2, Text, Window border
 var palettes: Array[PackedColorArray] = [
 	[Color("171717"), Color("242424"), Color("3b3b3b"), Color("c0c0c0"), Color("999999"), Color("c6c6c6"), Color("525252")],  # Dark
-	[Color("3a3a3a"), Color("303030"), Color("3a3a3a"), Color("c0c0c0"), Color("999999"), Color("c6c6c6"), Color("484848")],  # Gray
-	[Color("47526e"), Color("333b4f"), Color("262c3b"), Color("92a8e0"), Color("7182ad"), Color("c6c6c6"), Color("2b303d")],  # Blue
-	[Color("b6946c"), Color("ddb370"), Color("b6946c"), Color.BLACK, Color("999999"), Color("3d3124"), Color("705a42")],  # Caramel
-	[Color("667883"), Color("e0dddd"), Color("9cafba"), Color.BLACK, Color("999999"), Color("494b4d"), Color("adadad")],  # Light
-	[Color("261736"), Color("321f48"), Color("4f445c"), Color.WHITE, Color("999999"), Color("ccc7d1"), Color("1e122b")],  # Purple
+	[Color("333339"), Color("2e2e34"), Color("4f5065"), Color("a7b2ea"), Color("76768b"), Color("62637d"), Color("22222e")],  # Gray
+	[Color("47526e"), Color("333b4f"), Color("262c3b"), Color("92a8e0"), Color("7182ad"), Color("a3aaeb"), Color("2b303d")],  # Blue
+	[Color("b16832"), Color("cf874d"), Color("ce7c40"), Color("ffcd86"), Color("d88141"), Color("f8cc9d"), Color("995d42")],  # Caramel
+	[Color("e7f1f7"), Color("dbe4f0"), Color("aaccf8"), Color("afc4de"), Color("afc4de"), Color("497199"), Color("90afca")],  # Light
+	[Color("433057"), Color("623b78"), Color("7a4d8e"), Color("d093dd"), Color("9e66b5"), Color("ae72d0"), Color("3d2446")],  # Purple
+	[Color("a53753"), Color("c85676"), Color("df6f89"), Color("f69bb2"), Color("c14d68"), Color("651717"), Color("61283d")],  # Rose
 ]
 @onready var grid_container := %GridContainer as GridContainer
 @onready var palette_option_button := %PaletteOptionButton as OptionButton
