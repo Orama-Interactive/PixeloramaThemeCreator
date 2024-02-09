@@ -129,7 +129,7 @@ var theme_properties := {
 ## Background, Primary, Secondary, Accent, Accent #2, Text, Window border
 var palettes: Array[PackedColorArray] = [
 	[Color("171717"), Color("242424"), Color("3b3b3b"), Color("c0c0c0"), Color("999999"), Color("c6c6c6"), Color("525252")],  # Dark
-	[Color("333339"), Color("2e2e34"), Color("4f5065"), Color("a7b2ea"), Color("76768b"), Color("62637d"), Color("22222e")],  # Gray
+	[Color("333339"), Color("2e2e34"), Color("4f5065"), Color("a7b2ea"), Color("76768b"), Color("9192b8"), Color("22222e")],  # Gray
 	[Color("47526e"), Color("333b4f"), Color("262c3b"), Color("92a8e0"), Color("7182ad"), Color("a3aaeb"), Color("2b303d")],  # Blue
 	[Color("b16832"), Color("cf874d"), Color("ce7c40"), Color("ffcd86"), Color("d88141"), Color("f8cc9d"), Color("995d42")],  # Caramel
 	[Color("e7f1f7"), Color("dbe4f0"), Color("aaccf8"), Color("484b68"), Color("afc4de"), Color("497199"), Color("90afca")],  # Light
