@@ -86,17 +86,37 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Dark"
 
-[node name="ThemeName" type="HBoxContainer" parent="Panel/HSplitContainer/VBoxContainer"]
+[node name="PathContainer" type="HBoxContainer" parent="Panel/HSplitContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="SaveButton" type="Button" parent="Panel/HSplitContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Panel/HSplitContainer/VBoxContainer/PathContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Pixelorama theme path"
+
+[node name="PathLineEdit" type="LineEdit" parent="Panel/HSplitContainer/VBoxContainer/PathContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SaveFileButton" type="Button" parent="Panel/HSplitContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
-text = "Save"
+text = "Save single file"
+
+[node name="SaveToPath" type="Button" parent="Panel/HSplitContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save to path"
 
 [node name="ThemePreview" parent="Panel/HSplitContainer" instance=ExtResource("3_5b7v3")]
 unique_name_in_owner = true
 layout_mode = 2
 
 [connection signal="item_selected" from="Panel/HSplitContainer/VBoxContainer/GridContainer/PaletteOptionButton" to="." method="_on_palette_option_button_item_selected"]
-[connection signal="pressed" from="Panel/HSplitContainer/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Panel/HSplitContainer/VBoxContainer/HBoxContainer/SaveFileButton" to="." method="_on_save_file_button_pressed"]
+[connection signal="pressed" from="Panel/HSplitContainer/VBoxContainer/HBoxContainer/SaveToPath" to="." method="_on_save_to_path_pressed"]

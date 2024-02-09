@@ -81,6 +81,10 @@ var theme_properties := {
 		ThemeProperty.new(&"icon_hover_pressed_color", &"Button", Theme.DATA_TYPE_COLOR, false, _lighten.bind(0.2)),
 		ThemeProperty.new(&"icon_hover_color", &"Button", Theme.DATA_TYPE_COLOR, false, _lighten.bind(0.3)),
 		ThemeProperty.new(&"font_hover_color", &"PopupMenu"),
+		ThemeProperty.new(&"font_pressed_color", &"MenuButton"),
+		ThemeProperty.new(&"font_hover_color", &"MenuButton"),
+		ThemeProperty.new(&"font_pressed_color", &"MenuBar"),
+		ThemeProperty.new(&"font_hover_color", &"MenuBar"),
 		ThemeProperty.new(&"font_hovered_color", &"ItemList"),
 		ThemeProperty.new(&"modulate_color", &"Icons"),
 		ThemeProperty.new(&"panel", &"TooltipPanel", Theme.DATA_TYPE_STYLEBOX, true),
@@ -128,13 +132,14 @@ var palettes: Array[PackedColorArray] = [
 	[Color("333339"), Color("2e2e34"), Color("4f5065"), Color("a7b2ea"), Color("76768b"), Color("62637d"), Color("22222e")],  # Gray
 	[Color("47526e"), Color("333b4f"), Color("262c3b"), Color("92a8e0"), Color("7182ad"), Color("a3aaeb"), Color("2b303d")],  # Blue
 	[Color("b16832"), Color("cf874d"), Color("ce7c40"), Color("ffcd86"), Color("d88141"), Color("f8cc9d"), Color("995d42")],  # Caramel
-	[Color("e7f1f7"), Color("dbe4f0"), Color("aaccf8"), Color("afc4de"), Color("afc4de"), Color("497199"), Color("90afca")],  # Light
+	[Color("e7f1f7"), Color("dbe4f0"), Color("aaccf8"), Color("484b68"), Color("afc4de"), Color("497199"), Color("90afca")],  # Light
 	[Color("433057"), Color("623b78"), Color("7a4d8e"), Color("d093dd"), Color("9e66b5"), Color("ae72d0"), Color("3d2446")],  # Purple
 	[Color("a53753"), Color("c85676"), Color("df6f89"), Color("f69bb2"), Color("c14d68"), Color("651717"), Color("943d5d")],  # Rose
 ]
 @onready var grid_container := %GridContainer as GridContainer
 @onready var palette_option_button := %PaletteOptionButton as OptionButton
 @onready var theme_name_line_edit := %ThemeNameLineEdit as LineEdit
+@onready var path_line_edit := %PathLineEdit as LineEdit
 
 
 class ThemeProperty:
@@ -212,9 +217,24 @@ func color_changed(color: Color, properties: Array) -> void:
 		prop.set_color(theme_to_apply, color)
 
 
-func _on_save_button_pressed() -> void:
+func _on_save_file_button_pressed() -> void:
 	theme_to_apply.resource_name = theme_name_line_edit.text
 	ResourceSaver.save(theme_to_apply, "user://theme.tres")
+
+
+func _on_save_to_path_pressed() -> void:
+	var path := path_line_edit.text
+	if path.is_empty():
+		return
+	var theme_name := theme_name_line_edit.text
+	var dir := DirAccess.open(path)
+	if not is_instance_valid(dir):
+		return
+	var theme_directory := path.path_join(theme_name.to_lower())
+	if not DirAccess.dir_exists_absolute(theme_directory):
+		DirAccess.make_dir_absolute(theme_directory)
+	theme_to_apply.resource_name = theme_name
+	ResourceSaver.save(theme_to_apply, theme_directory.path_join("theme.tres"))
 
 
 func _invert_color(color: Color) -> Color:
