@@ -4,6 +4,7 @@ extends Panel
 @onready var tab_container: TabContainer = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/TabContainer
 @onready var popup_window: Button = $MarginContainer/VBoxContainer/HBoxContainer/Buttons/PopupWindow
 @onready var tree: Tree = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Tree
+@onready var item_list: ItemList = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/ItemList
 @onready var accept_dialog: AcceptDialog = $AcceptDialog
 
 
@@ -27,3 +28,7 @@ func _ready() -> void:
 	range_item.set_cell_mode(0, TreeItem.CELL_MODE_RANGE)
 	range_item.set_editable(0, true)
 	range_item.set_range(0, 2)
+
+	item_list.add_item("Item")
+	item_list.add_item("Item 2")
+	item_list.add_item("Item 3")

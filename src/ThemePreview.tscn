@@ -201,6 +201,14 @@ editable = false
 layout_mode = 2
 value = 50.0
 
+[node name="MenuBar" type="MenuBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+flat = true
+
+[node name="Menu1" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MenuBar"]
+
+[node name="Menu2" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MenuBar"]
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -222,6 +230,10 @@ layout_mode = 2
 
 [node name="Tree" type="Tree" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
