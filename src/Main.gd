@@ -72,6 +72,7 @@ var theme_properties := {
 		ThemeProperty.new(&"tab_selected", &"TabBar", Theme.DATA_TYPE_STYLEBOX, true),
 		ThemeProperty.new(&"tab_focus", &"TabContainer", Theme.DATA_TYPE_STYLEBOX, true),
 		ThemeProperty.new(&"tab_selected", &"TabContainer", Theme.DATA_TYPE_STYLEBOX, true),
+		ThemeProperty.new(&"panel", &"ItemList", Theme.DATA_TYPE_STYLEBOX, true),
 		ThemeProperty.new(&"font_focus_color", &"Button"),
 		ThemeProperty.new(&"font_hover_color", &"Button"),
 		ThemeProperty.new(&"font_hover_pressed_color", &"Button"),
@@ -134,7 +135,7 @@ var palettes: Array[PackedColorArray] = [
 	[Color("b16832"), Color("cf874d"), Color("ce7c40"), Color("ffcd86"), Color("d88141"), Color("f8cc9d"), Color("995d42")],  # Caramel
 	[Color("e7f1f7"), Color("dbe4f0"), Color("aaccf8"), Color("484b68"), Color("afc4de"), Color("497199"), Color("90afca")],  # Light
 	[Color("433057"), Color("623b78"), Color("7a4d8e"), Color("d093dd"), Color("9e66b5"), Color("ae72d0"), Color("3d2446")],  # Purple
-	[Color("a53753"), Color("c85676"), Color("df6f89"), Color("f69bb2"), Color("c14d68"), Color("651717"), Color("943d5d")],  # Rose
+	[Color("a53753"), Color("c85676"), Color("df6f89"), Color("f69bb2"), Color("c14d68"), Color("c6c6c6"), Color("61283d")],  # Rose
 ]
 @onready var grid_container := %GridContainer as GridContainer
 @onready var palette_option_button := %PaletteOptionButton as OptionButton
