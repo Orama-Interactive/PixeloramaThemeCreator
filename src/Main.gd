@@ -111,6 +111,9 @@ var theme_properties := {
 		ThemeProperty.new(&"font_unselected_color", &"TabContainer"),
 		ThemeProperty.new(&"title_color", &"Window"),
 		ThemeProperty.new(&"font_color", &"TooltipLabel"),
+		ThemeProperty.new(&"children_hl_line_color", &"Tree", Theme.DATA_TYPE_COLOR, false, _set_alpha.bind(0.15)),
+		ThemeProperty.new(&"parent_hl_line_color", &"Tree", Theme.DATA_TYPE_COLOR, false, _set_alpha.bind(0.15)),
+		ThemeProperty.new(&"relationship_line_color", &"Tree", Theme.DATA_TYPE_COLOR, false, _set_alpha.bind(0.1)),
 		ThemeProperty.new(&"font_disabled_color", &"Button", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
 		ThemeProperty.new(&"icon_disabled_color", &"Button", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
 		ThemeProperty.new(&"font_disabled_color", &"MenuButton", Theme.DATA_TYPE_COLOR, false, _halve_alpha),
@@ -240,6 +243,12 @@ func _on_save_to_path_pressed() -> void:
 
 func _invert_color(color: Color) -> Color:
 	return color.inverted()
+
+
+func _set_alpha(color: Color, alpha: float) -> Color:
+	var new_color := color
+	new_color.a = alpha
+	return new_color
 
 
 func _halve_alpha(color: Color) -> Color:

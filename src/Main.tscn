@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3her63njn0ig"]
 
 [ext_resource type="Script" path="res://src/Main.gd" id="1_7phw3"]
-[ext_resource type="Theme" uid="uid://d34181b1xcot5" path="res://theme.tres" id="1_m72h5"]
+[ext_resource type="Theme" uid="uid://cngbvfpwjoimv" path="res://theme.tres" id="1_m72h5"]
 [ext_resource type="PackedScene" uid="uid://dgy24hxeaxnny" path="res://src/ThemePreview.tscn" id="3_5b7v3"]
 
 [node name="Main" type="Control"]
@@ -58,10 +58,9 @@ text = "Pre-made palette:"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-item_count = 7
 selected = 0
+item_count = 7
 popup/item_0/text = "Dark"
-popup/item_0/id = 0
 popup/item_1/text = "Gray"
 popup/item_1/id = 1
 popup/item_2/text = "Blue"
