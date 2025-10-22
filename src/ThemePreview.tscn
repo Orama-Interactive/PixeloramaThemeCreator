@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dgy24hxeaxnny"]
 
-[ext_resource type="Script" path="res://src/ThemePreview.gd" id="1_rvxmp"]
+[ext_resource type="Script" uid="uid://mm7ovo3cpq1e" path="res://src/ThemePreview.gd" id="1_rvxmp"]
 
 [node name="ThemePreview" type="Panel"]
 anchors_preset = 15
@@ -105,7 +105,6 @@ popup/item_0/id = 0
 popup/item_1/text = "Disabled Item"
 popup/item_1/id = 1
 popup/item_1/disabled = true
-popup/item_2/text = ""
 popup/item_2/id = 2
 popup/item_2/separator = true
 popup/item_3/text = "Check Item"
@@ -115,7 +114,6 @@ popup/item_4/text = "Checked Item"
 popup/item_4/checkable = 1
 popup/item_4/checked = true
 popup/item_4/id = 4
-popup/item_5/text = ""
 popup/item_5/id = 7
 popup/item_5/separator = true
 popup/item_6/text = "Radio Item"
@@ -131,11 +129,10 @@ popup/item_8/separator = true
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
-item_count = 5
 selected = 0
+item_count = 5
 popup/item_0/text = "OptionButton"
 popup/item_0/id = 0
-popup/item_1/text = ""
 popup/item_1/id = 1
 popup/item_1/separator = true
 popup/item_2/text = "Has"
@@ -209,6 +206,23 @@ flat = true
 
 [node name="Menu2" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MenuBar"]
 
+[node name="FoldableContainer" type="FoldableContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+title = "Foldable Container"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/FoldableContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/FoldableContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Text"
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/FoldableContainer/GridContainer"]
+layout_mode = 2
+text = "Button"
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -216,17 +230,21 @@ size_flags_horizontal = 3
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+current_tab = 0
 
 [node name="Tab 1" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="Tab 2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="Tab 3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 2
 
 [node name="Tree" type="Tree" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 110)
@@ -235,6 +253,10 @@ layout_mode = 2
 [node name="ItemList" type="ItemList" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+item_count = 3
+item_0/text = "Item"
+item_1/text = "Item 2"
+item_2/text = "Item 3"
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 120)
